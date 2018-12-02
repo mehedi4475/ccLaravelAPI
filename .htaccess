@@ -1,0 +1,6 @@
+<Directory /var/www/laravel.test/html/laravel/public/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+

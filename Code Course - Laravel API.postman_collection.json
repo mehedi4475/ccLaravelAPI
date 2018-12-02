@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "5e62abf9-fe6c-4d4f-991a-8717c0528892",
+		"name": "Code Course - Laravel API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\"\t:\t\"hasan\",\n\t\"email\"\t\t:\t\"hasan4475@gmail.com\",\n\t\"password\"\t:\t\"nopassword\"\n\n}"
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"grant_type\"\t:\t\"password\",\n\t\"client_id\"\t\t:\t\"2\",\n\t\"client_secret\"\t:\t\"8DbpvEGmCWAuRNUCsQVvkNxVlM67xg3NIsur7uyZ\",\n\t\"username\"\t\t:\t\"mehedi4475@gmail.com\",\n\t\"password\"\t\t:\t\"nopassword\",\n\t\"scope\"\t\t\t:\t\"*\"\n\n}"
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/oauth/token",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topics",
+			"item": [
+				{
+					"name": "Topic Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"title\"\t\t:\t\"This is a title\",\n \t\"body\"\t\t:\t\"This is a body message\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topic Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"title\"\t\t:\t\"This is a new title\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/25",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topic Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"title\"\t\t:\t\"This is a title\",\n \t\"body\"\t\t:\t\"This is a body message\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topic Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"title\"\t\t:\t\"This is a title\",\n \t\"body\"\t\t:\t\"This is a body message\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/61",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topic Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/1",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Post Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"body\"\t\t:\t\"This is a body message\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/10/posts",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"10",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"body\"\t\t:\t\"A New body message here\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/10/posts/75",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"10",
+								"posts",
+								"75"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"title\"\t\t:\t\"This is a title\",\n \t\"body\"\t\t:\t\"This is a body message\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/60/posts",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"60",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"title\"\t\t:\t\"This is a title\",\n \t\"body\"\t\t:\t\"This is a body message\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/10/posts/75",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"10",
+								"posts",
+								"75"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \t\"body\"\t\t:\t\"A New body message here\"\n } "
+						},
+						"url": {
+							"raw": "http://laravel.test:8000/api/topics/10/posts/74",
+							"protocol": "http",
+							"host": [
+								"laravel",
+								"test"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"topics",
+								"10",
+								"posts",
+								"74"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
